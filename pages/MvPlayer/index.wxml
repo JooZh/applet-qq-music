@@ -1,0 +1,17 @@
+<view class="" style='opacity:{{ready}}'>
+  <video id="myVideo" src="{{url}}" poster="{{pic}}" objectFit="" show-play-btn controls />
+  <view class='more-mv'>
+    <view class='head'>大部分人还爱看</view>
+    <swiper display-multiple-items="3">
+      <swiper-item wx:for="{{otherList}}" wx:key>
+        <view class='detail' bindtap='getPlay' data-id="{{item.vid}}">
+          <view class='img'>
+            <image src='{{item.cover_pic?item.cover_pic:defaultImg}}' mode='aspectFit'></image>
+          </view>
+          <view class='title'>{{item.name}}</view>
+          <view class='date'>播放：{{item.playcnt}} 万</view>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+</view>

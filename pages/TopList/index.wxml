@@ -1,0 +1,16 @@
+<view class="toplist" wx:if="{{ready}}">
+  <view class='list' wx:for="{{topList}}" wx:key data-id="{{item.id}}" data-title="{{item.topTitle}}" bindtap='goDetail'>
+    <view class='img'>
+      <image src="{{item.picUrl}}" mode='widthFix' />
+    </view>
+    <view class='info'>
+      <view class='title'>{{item.topTitle}}</view>
+      <view class='name-list' wx:for="{{item.songList}}" wx:for-item="name" wx:for-index="idx" wx:key>
+        <text class='color-h'>{{idx+1}}</text> {{name.songname}} <text class='color-h'> - {{name.singername}}</text>
+      </view>
+    </view>
+    <view class='right'>
+      <view class='v'></view>
+    </view>
+  </view>
+</view>

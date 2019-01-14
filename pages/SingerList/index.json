@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "歌手",
+  "usingComponents": {
+    "Loading": "../../components/Loading/index"
+  }
+}

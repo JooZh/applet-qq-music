@@ -1,0 +1,10 @@
+<view class='lists'>
+  <view class='list' wx:for="{{menuList}}" wx:key>
+    <view class='detail' bindtap='getDetail' data-dissid="{{item.dissid}}" data-title="{{item.dissname}}">
+      <image class='img' lazy-load src='{{item.pic?item.pic:defaultImg}}' mode='widthFix' binderror="imgError" data-errorid="{{index}}"></image>
+      <view class='title'>{{item.dissname}}</view>
+      <view class='date'>{{item.creator_name}}</view>
+      <view class='date'>收听: {{item.listen_count}} 万</view>
+    </view>
+  </view>
+</view>

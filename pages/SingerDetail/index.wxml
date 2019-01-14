@@ -1,0 +1,43 @@
+<scroll-view class='detail-scroll' scroll-y scroll-top="{{scrollTop}}" style='opacity:{{ready}}'>
+<!-- <view class='detail-scroll' style='transform: translate3d(0%,{{scrollTop}}px,0%)'> -->
+  <view id='infos' class='infos'>
+    <view class='singer-bg'>
+      <image class='background' src='{{singerInfo.singer_avatar}}' mode='widthFix'></image>
+    </view>
+    <view class='info-content'>
+      <!-- <image class='min-avatar' src='{{singerInfo.singer_avatar}}' mode='widthFix'></image> -->
+      <view class='info'>
+        <!-- <view class='name'>{{singerInfo.singer_name}}</view> -->
+        <view class='fans'>粉丝: {{singerInfo.singer_fance}} 万</view>
+      </view>
+    </view>
+  </view>
+  <!-- 修改list个数的时候需要同时修改对应的数据tabLength -->
+  <view class='tab'>
+    <view class="tab-list {{fixed ? 'fixed':''}}">
+      <view class="tab-list-item" data-current="0" bindtap="tabChange">
+        <text class="{{current==0?'on':''}}">单曲 {{song_total}}</text>
+      </view>
+      <view class="tab-list-item" data-current="1" bindtap="tabChange">
+        <text class="{{current==1?'on':''}}">专辑 {{album_total}}</text>
+      </view>
+      <view class="tab-list-item" data-current="2" bindtap="tabChange">
+        <text class="{{current==2?'on':''}}">MV {{mv_total}}</text>
+      </view>
+    </view>
+    <view class='tab-plan'>
+      <swiper class='swiper' bindchange="swiperChange" current="{{current}}">
+        <swiper-item>
+          <Singer-song singer_mid="{{singer_mid}}" bindsongTotal="songTotal" bindscrollTop="scrollTop"></Singer-song>
+        </swiper-item>
+        <swiper-item>
+          <Singer-album singer_mid="{{singer_mid}}" bindalbumTotal="albumTotal" bindscrollTop="scrollTop"></Singer-album>
+        </swiper-item>
+        <swiper-item>
+          <Singer-mv singer_mid="{{singer_mid}}" bindmvTotal="mvTotal" bindscrollTop="scrollTop"></Singer-mv>
+        </swiper-item>
+      </swiper>
+    </view>
+  </view>
+<!-- </view> -->
+</scroll-view>

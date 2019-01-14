@@ -1,0 +1,9 @@
+<view class='lists'>
+  <view class='list' wx:for="{{albumList}}" wx:key>
+    <view class='detail' bindtap='getDetail' data-albumid="{{item.album_mid}}" data-title="{{item.album_name}}">
+      <image class='img' lazy-load src='{{item.pic?item.pic:defaultImg}}' mode='widthFix' binderror="imgError" data-errorid="{{index}}"></image>
+      <view class='title'>{{item.album_name}}</view>
+      <view class='date'>{{item.pub_time}}</view>
+    </view>
+  </view>
+</view>

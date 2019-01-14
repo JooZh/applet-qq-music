@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "歌单列表",
+  "usingComponents": {
+    "Menu-list": "../../components/MenuList/index",
+    "Loading": "../../components/Loading/index"
+  }
+}

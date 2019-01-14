@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Song-list": "../SongList/index",
+    "Loading": "../Loading/index"
+  }
+}

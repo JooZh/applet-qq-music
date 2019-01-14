@@ -1,0 +1,96 @@
+/* 背景图片 */
+page{
+  height: 100%;
+  width: 100%;
+}
+.detail-scroll{
+  height: 100%;
+  overflow: hidden
+}
+.infos{
+  height: 306rpx;
+  width: 100%;
+}
+.areas-fix{
+  border-bottom: 1rpx solid #191919;
+}
+.areas-fix .areas{
+  display: flex;
+  line-height: 60rpx;
+  border-top: 1rpx solid #191919;
+}
+.areas-fix .areas .tit{
+  flex: 80rpx 0 0;
+  text-align: center
+} 
+.areas-fix .areas .scroll-box{
+  flex: 1;
+  overflow: hidden;
+  white-space:nowrap;
+}
+.areas-fix .areas .void{
+  flex: 20rpx 0 0;
+} 
+.areas-fix .areas .areas-list{
+  width: 100%;
+}
+.areas-fix .areas .area{
+  font-size: 24rpx;
+  padding: 0 15rpx 0 25rpx;
+  color: #999;
+  display: inline-block
+}
+.areas-fix .areas .area.select{
+  color: #ffcd32;
+}
+
+/* 导航 */
+.tab{
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  
+}
+.tab .fixed{
+  position: fixed;
+  top: 0;
+  left: 0; 
+  z-index: 2;
+  background: #252525; 
+  transition: background 0.5s ease;
+}
+.tab-list {
+  background: transparent;
+  transition: background 0.5s ease;
+  width: 100%;
+  display: flex;
+  border-bottom: 1rpx solid #202020;
+  line-height: 70rpx;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+.tab-list .tab-list-item {
+  font-size: 28rpx;
+  flex: 1;
+  color: rgba(255,255,255,0.5);
+}
+.tab-list .tab-list-item .tags{
+  padding: 0 30rpx;
+}
+.tab-list .tab-list-item.left {
+  text-align: left;
+}
+.tab-list .tab-list-item.right {
+  text-align: right
+}
+.tab-list .tab-list-item.right text{
+  padding:0 15rpx; 
+}
+.tab-list .tab-list-item .select{
+  color: #ffcd32;
+}
+/* 内容主体 */
+ .tab-plan{
+  padding-top:72rpx;
+} 

@@ -1,0 +1,9 @@
+<view class='lists'>
+  <view class='list' wx:for="{{mvList}}" wx:key>
+    <view class='detail' bindtap='getPlay' data-id="{{item.vid}}">
+      <image class='img' src='{{item.pic?item.pic:defaultImg}}' mode='widthFix'></image>
+      <view class='title'>{{item.title}}</view>
+      <view class='date'>播放：{{item.listenCount}} 万</view>
+    </view>
+  </view>
+</view>

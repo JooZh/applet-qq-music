@@ -1,0 +1,102 @@
+
+.areas-fix{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 60rpx;
+  border-bottom: 1rpx solid #191919;
+}
+.areas-fix .areas{
+  overflow: hidden;
+  white-space:nowrap;
+}
+.areas-fix .areas .areas-list{
+  width: 100%;
+  height: 60rpx;
+  border-top: 1rpx solid #191919;
+  line-height: 50rpx;
+}
+.areas-fix .areas .area{
+  font-size: 24rpx;
+  padding: 0 15rpx 0 25rpx;
+  color: #999;
+  display: inline-block
+}
+.areas-fix .areas .area.select{
+  color: #ffcd32;
+}
+
+.singers-lists-main{
+  background: transparent;
+  position: absolute;
+  top: 184rpx;
+  left: 6rpx;
+  right: 60rpx;
+  bottom:0;
+  overflow: hidden;
+}
+.singers-lists-main .singers-list{
+  height: 100%;
+}
+.singers-lists-main .singers-list .singers{
+  padding-bottom: 30rpx;
+}
+.singers-lists-main .singers-list .singer{
+  padding: 30rpx 0 0 50rpx;
+  font-size: 25rpx;
+  display: flex;
+}
+.singers-lists-main .singers-list .singer .avatar{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  display: block;
+  background: #ddd;
+}
+.singers-lists-main .singers-list .singer .info{
+  margin: 0 0 0 30rpx;
+}
+.singers-lists-main .singers-list .singer .info .name{
+  line-height: 80rpx;
+}
+.singers-lists-main .singers-list .singer .info .f-name{
+  color: rgba(255,255,255,0.7);
+}
+.no-singer{
+  width: 100%;
+  height: 100%;
+  color: #999;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center
+}
+
+.letters{
+  width: 60rpx;
+  font-size: 24rpx;
+  font-weight: 700;
+  text-align: center;
+  border-left: 1rpx solid #191919;
+  border-top: 1rpx solid #191919;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  overflow: hidden;
+}
+.letters .letters-list{
+  height: 100%;
+}
+.letters .letter{
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  overflow: hidden;
+  color: #999
+}
+.letters .letter.select{
+  color: #ffcd32
+}

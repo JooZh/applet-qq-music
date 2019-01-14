@@ -1,0 +1,57 @@
+<view class='play-box'>
+  <view class='play-bg'>
+    <image class='background' src='{{playerData.playImage}}' mode='widthFix'></image>
+  </view>
+  <view class='play-content'>
+    <view class='play-center'>
+      <view class="circle {{playerData.playLyricShow =='s'?'toggleShow':'toggleHide'}}" bindtap='toggleShow' data-status="l">
+        <image class="cd {{playerData.playStatus==1?'paused':''}}" src='{{playerData.playImage}}'></image>
+      </view>
+      <view class="lyric-content {{playerData.playLyricShow =='l'?'toggleShow':'toggleHide'}}" bindtap='toggleShow' data-status="s">
+        <scroll-view class='lyric-scroll' scroll-y scroll-top='{{playerData.playLyricPlace}}' scroll-with-animation>
+          <view class='lyric-line {{playerData.playLyricIndex == index ? "index":""}}' wx:for="{{playerData.playLyric}}" wx:key>{{item.text}}</view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class='play-bottom'>
+      <view class='play-progress'>
+        <view class='this-time'>{{playerData.playTime}}</view>
+        <view class='progress-box'>
+          <slider class='progress' block-size="15" max="{{playerData.playSong.longnumber}}" activeColor="{{progress_color}}" bindchange="sliderChange" bindchanging="sliderChanging" step="1" value="{{playerData.playProgress}}"/>
+        </view>
+        <view class='all-time'>{{playerData.playSong.interval}}</view>
+      </view>
+      <view class='play-buttons'>
+        <view class='button'>
+          <view class='random' bindtap='changeListStatus'>{{playListStateSelect[playerData.playListState].name}}</view>
+        </view>
+        <view class='button'>
+          <view class='prev' bindtap='prev'>上一曲</view>
+        </view>
+        <view class='button'>
+          <view class='cltr'>
+            <view class='play' wx:if="{{playerData.playStatus==1}}" bindtap='play'>播放</view>
+            <view class='pause' wx:if="{{playerData.playStatus==0}}" bindtap='pause'>暂停</view>
+          </view>
+        </view>
+        <view class='button'>
+          <view class='next' bindtap='next'>下一曲</view>
+        </view>
+        <view class='button'>
+          <view class='music-list' bindtap='openList'>播放列表</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='play-list' style='transform: translate3d(0,{{openList}}, 0)'>
+    <view class='play-list-nav'>
+      <view class='nav-state' bindtap='changeListStatus'>{{playListStateSelect[playerData.playListState].name}} ({{playerList.length}})</view>
+      <view class='nav-center'></view>
+      <view class='nav-clear' bindtap='clearPlayerList'>清空</view>
+    </view>
+    <scroll-view class='play-list-scroll' scroll-y>
+      <Play-list id="playList" playerList="{{playerList}}" bind:changeSong="changeSong" bind:deleteSong="deleteSong" playSongindex="{{playerData.playSongindex}}"></Play-list>
+    </scroll-view>
+    <view class='close' bindtap='closeList'>关闭</view>
+  </view>
+</view>

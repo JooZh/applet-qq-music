@@ -1,0 +1,29 @@
+<view style='opacity:{{ready}}'>
+  <view id='infos' class='infos'>
+    <view class='singer-bg'>
+      <image class='background' src='{{topInfo.img}}' mode='scaleToFill'></image>
+    </view>
+    <view class='info-content'>
+      <image class='min-avatar' src='{{topInfo.img}}' mode='widthFix'></image>
+      <view class='info'>
+        <view class='name'>{{topInfo.name}}</view>
+        <view class='fans'>{{topInfo.singername}} </view>
+        <view class='fans'>流派: {{topInfo.genre}} </view>
+        <view class='fans'>发行时间: {{topInfo.aDate}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='tab'>
+    <view class="tab-list {{fixed ? 'fixed':''}}">
+      <view class="tab-list-item left">
+        <text class="left">歌词共 {{topInfo.total_song_num}} 首</text>
+      </view>
+      <view class="tab-list-item right">
+        <text class="right" bindtap='playAll'>全部播放</text>
+      </view>
+    </view>
+    <view class='tab-plan'>
+      <Song-list musicList="{{songlist}}"></Song-list>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<view class='songlist'>
+  <view class='list' wx:for="{{musicList}}" wx:key>
+    <view class='number'>{{index+1}}</view>
+    <view class='detail' bindtap='getPlay' data-index="{{index}}">
+      <view class='songname'>{{item.songname}}</view>
+      <view class='albumname'>{{item.singer}} · {{item.albumname}}</view>
+    </view>
+    <view class='time' data-index="{{index}}" bindtap='addPlay'>
+      <view class='c'>+</view>
+    </view>
+  </view>
+</view>

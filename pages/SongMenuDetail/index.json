@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "排行榜详情",
+  "usingComponents": {
+    "Song-list": "../../components/SongList/index"
+  }
+}

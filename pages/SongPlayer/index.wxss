@@ -1,0 +1,235 @@
+page{
+  height: 100%;
+  width: 100%;
+  color: #e6e6e6;
+  font-size: 25rpx;
+}
+.play-box{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+.play-bg{
+  width: 100%;
+  height: 100%;
+  background: #353535;
+  -webkit-filter: blur(30px);
+  filter: blur(30px);
+  opacity: 0.7;
+}
+.play-bg .background{
+  width: 300%;
+  transform: translate3d(-50%, -30%, 0)
+}
+.play-content{
+  position: absolute;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.play-content .play-center{
+  width: 100%;
+  position: absolute;
+  bottom: 200rpx;
+  left: 0;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.play-content .play-center .circle{
+  width: 520rpx;
+  height: 520rpx;
+  border-radius: 50%;
+  border:20rpx solid rgba(255, 255, 255, 0.2);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+}
+.play-content .play-center .circle::before{
+  display: block;
+  content: " ";
+  width: 340rpx;
+  height: 340rpx;
+  border:90rpx solid rgba(33, 33, 33, 1);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1
+}
+.play-content .play-center .circle .cd{
+  width: 320rpx;
+  height: 320rpx;
+  border-radius: 50%;
+  position: relative;
+  margin: 10rpx;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.4);
+  animation: rotate 20s linear infinite;
+}
+.play-content .play-center .circle .cd.paused{
+  animation-play-state:paused; 
+}
+
+@keyframes rotate{
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}   
+
+.toggleShow{
+  z-index: 6;
+  opacity: 1;
+  transition: opacity 0.3s ease-in
+}
+.toggleHide{
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease-in
+}
+
+.play-content .play-center .lyric-content{
+  position: absolute;
+  top: 54rpx;
+  left: 0;
+  right: 0;
+  bottom: 54rpx;
+  z-index: 5;
+  text-align: center;
+  color: #ccc;
+}
+.play-content .play-center .lyric-content .lyric-scroll{
+  width: 100%;
+  height: 100%;
+}
+.play-content .play-center .lyric-content .lyric-scroll .lyric-line{
+  line-height: 30px;
+  height: 30px;
+  overflow: hidden;
+  width: 90%;
+  letter-spacing: 1rpx;
+  opacity: 0.7;
+  font-size: 28rpx;
+  margin: 0 auto;
+}
+.play-content .play-center .lyric-content .lyric-scroll .lyric-line.index{
+  color: #ffcd32;
+  opacity: 1;
+}
+.play-content .play-bottom{
+  width: 100%;
+  height: 200rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.play-content .play-bottom .play-progress{
+  display: flex;
+  margin-bottom: 40rpx;
+  font-size: 20rpx;
+  text-align: center;
+  height: 30rpx;
+  line-height:30rpx;
+}
+.play-content .play-bottom .play-progress .this-time{
+  flex: 0 0 100rpx;
+}
+.play-content .play-bottom .play-progress .progress-box{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 15rpx;
+}
+.play-content .play-bottom .play-progress .progress-box .progress{
+  width: 100%;
+  margin: 0;
+}
+
+.play-content .play-bottom .play-progress .all-time{
+  flex: 0 0 100rpx;
+}
+
+.play-content .play-bottom .play-buttons{
+  display: flex;
+}
+.play-content .play-bottom .play-buttons .button{
+  text-align: center;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.play-content .play-bottom .play-buttons .random{
+
+}
+.play-content .play-bottom .play-buttons .prev{
+  
+}
+.play-content .play-bottom .play-buttons .cltr{
+  border: 1px solid #ccc;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 50%;
+  position: relative;
+}
+.play-content .play-bottom .play-buttons .cltr .play{
+}
+.play-content .play-bottom .play-buttons .cltr .pause{
+}
+.play-content .play-bottom .play-buttons .next{
+  
+}
+.play-content .play-bottom .play-buttons .music-list{
+  
+}
+
+.play-list{
+  height: 75%;
+  position: relative;
+  background: #252525;
+  z-index: 20;
+  transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+.play-list .play-list-nav{
+  display: flex;
+  height: 100rpx;
+  border-bottom: 1px solid #353535;
+}
+.play-list .play-list-nav .nav-state{
+  flex: 0 0 210rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.play-list .play-list-nav .nav-center{
+  flex: 1
+}
+.play-list .play-list-nav .nav-clear{
+  flex: 0 0 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.play-list .play-list-scroll{
+  position: absolute;
+  top: 100rpx;
+  left: 0;
+  right: 0;
+  bottom: 100rpx;
+}
+.play-list .close{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100rpx;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid #353535;
+  line-height: 100rpx;
+}

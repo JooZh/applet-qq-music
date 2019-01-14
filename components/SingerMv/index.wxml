@@ -1,0 +1,4 @@
+<scroll-view class='scroll' scroll-y bindscroll="scrollEvent" bindscrolltolower="lodeMore">
+  <Mv-list mvList="{{mvList}}"></Mv-list>
+  <Loading wx:if="{{hasMore}}"></Loading>
+</scroll-view>

@@ -1,0 +1,47 @@
+<!--pages/singer.wxml-->
+<view class='areas'>
+  <view class="area {{keyIndex==index ? 'select' : ''}}" bindtap='selectChange' wx:for="{{areas}}" data-id="{{index}}" wx:key>
+    <text>{{item.value}}</text>
+  </view>
+</view>
+<!-- 列表 -->
+<view class='singers-lists-main'>
+  <view class='letters'>
+    <view 
+    class="letter {{navCurrent==index ? 'select' : ''}}"
+    bindtap='navTouchChange' 
+    wx:for="{{singerLists}}" 
+    data-id='{{index}}' 
+    wx:key="">
+      <text>{{item.name}}</text>
+    </view>
+  </view>
+    <scroll-view 
+    class='singers-list' 
+    scroll-y="true" 
+    scroll-top="{{scrollTop}}" 
+    bindscroll="scrollChange"
+    bindscrolltoupper = "lodeMoreUp"
+    bindscrolltolower = "lodeMoreDown"
+    >
+      <view class='singers' wx:for="{{singerLists}}" wx:for-item="lists" wx:key>
+        <view class='title'>{{lists.name}}</view>
+        <view class='singer' wx:for="{{lists.data}}" wx:key>
+          <view class='list' bindtap='openSinger' data-id="{{item.Fsinger_mid}}">
+            <image 
+            lazy-load
+            class='avatar' 
+            src='{{item.Favatar}}' 
+            mode='widthFix' />
+            <view class='info'>
+              <view class='name f-name'>{{item.Fsinger_name}}</view>
+              <view class='name c-name'>{{item.Fother_name}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+   <view id="pos" class='title pos' style='transform: translate3d(0px,{{fixTop}}px, 0px);'>
+    <text>{{singerLists[navCurrent]['name']}}</text>
+   </view> 
+</view>

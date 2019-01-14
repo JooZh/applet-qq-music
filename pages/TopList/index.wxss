@@ -1,0 +1,49 @@
+/* pages/TopList/index.wxss */
+.toplist{
+  padding: 20rpx 10rpx 0 10rpx;
+}
+.list{
+  margin: 0 10rpx 20rpx 10rpx;
+  display: flex;
+  background: #303030
+}
+.list .img{
+  flex: 200rpx 0 0;
+}
+.list .img image{
+  width: 100%;
+  height: 100%;
+  display: block
+}
+.list .info{
+  flex: 1;
+  margin-left: 20rpx
+}
+.list .info .title{
+  font-size: 28rpx;
+  line-height: 60rpx;
+  color: rgba(255,205,50,0.7);
+}
+.list .info .name-list{
+  line-height: 42rpx;
+  height: 42rpx;
+  overflow: hidden
+}
+.list .info .name-list .color-h{
+  color: #777;
+  font-family: "hiragino sans gb",arial;
+}
+.list .right{
+  flex: 60rpx 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.list .right .v{
+  display: inline-block;
+  border-top: 1rpx solid #777;
+  border-right: 1rpx solid #777;
+  transform: rotate(45deg);
+  width: 20rpx;
+  height: 20rpx
+}

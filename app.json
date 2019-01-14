@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/Recomment/index",
+    "pages/SingerList/index",
+    "pages/SingerDetail/index",
+    "pages/MvPlayer/index",
+    "pages/SongPlayer/index",
+    "pages/SongMenu/index",
+    "pages/TopList/index",
+    "pages/SongStation/index",
+    "pages/TopListDetail/index",
+    "pages/SongMenuDetail/index",
+    "pages/AlbumDetail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#252525",
+    "navigationBarTitleText": "我的音乐",
+    "navigationBarTextStyle": "#fff",
+    "backgroundColor": "#252525",
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/Recomment/index",
+        "text": "推荐"
+      },
+      {
+        "pagePath": "pages/SingerList/index",
+        "text": "歌手"
+      },
+      {
+        "pagePath": "pages/TopList/index",
+        "text": "排行榜"
+      },
+      {
+        "pagePath": "pages/SongMenu/index",
+        "text": "歌单"
+      },
+      {
+        "pagePath": "pages/SongStation/index",
+        "text": "播放"
+      }
+    ],
+    "color": "#aaa",
+    "backgroundColor": "#252525",
+    "borderStyle": "black"
+  }
+}

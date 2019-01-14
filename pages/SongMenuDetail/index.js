@@ -1,0 +1,80 @@
+import { song } from '../../tools/song.js';
+const App = getApp()
+Page({
+  data: {
+    infosHeight: 0,
+    fixed: false,
+    songlist: [],
+    topInfo: {},
+    ready: 0,
+  },
+  onLoad: function (options) {
+    wx.showLoading({
+      title: '加载中...',
+    })
+    this._getInfosHeight();
+    this.getData(options.disstid)
+    wx.setNavigationBarTitle({
+      title: options.dissname,
+    })
+  },
+  getData(disstid) {
+    App.axios({
+      url: App.common.c,
+      data: {
+        api: App.api.songMenuDetail,
+        disstid: disstid,
+        type: 1,
+        json: 1,
+        utf8: 1,
+        onlysong: 0,
+      }
+    }).then((res) => {
+      let topInfo = res.data.topInfo;
+      let songlist = this._musicHander(res.data.songlist)
+      this.setData({
+        topInfo: topInfo,
+        songlist: songlist,
+        ready: 1,
+      }, () => {
+        wx.hideLoading()
+      })
+    })
+  },
+  onPageScroll(e) {
+    let fixed = false
+    if (e.scrollTop > this.data.infosHeight) {
+      fixed = true
+    } else if (e.scrollTop < this.data.infosHeight) {
+      fixed = false
+    }
+    this.setData({
+      fixed: fixed
+    })
+  },
+  playAll() {
+    App.appData.playerList = this.data.songlist;
+    let songid = this.data.songlist[0].songid
+    // 跳转到play页面
+    wx.navigateTo({
+      url: `/pages/SongPlayer/index?songid=${songid}`
+    })
+  },
+  // 处理歌曲数组
+  _musicHander(list) {
+    let musicList = [];
+    list.forEach((item, index) => {
+      musicList.push(song(item));
+    });
+    return musicList;
+  },
+  // 获取infos节点的高度
+  _getInfosHeight() {
+    let query = wx.createSelectorQuery();
+    query.select('#infos').boundingClientRect((res) => {
+      this.setData({
+        infosHeight: res.height
+      });
+    }).exec();
+  },
+})

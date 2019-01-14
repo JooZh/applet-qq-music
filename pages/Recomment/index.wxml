@@ -1,0 +1,21 @@
+<view style='opacity:{{ready}}'>
+  <view id='infos' class='infos'>
+    <swiper class='swiper' indicator-dots autoplay>
+      <block wx:for="{{imageList}}" wx:key>
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" mode='widthFix'/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='tab'>
+    <view class="tab-list {{fixed ? 'fixed':''}}">
+      <view class="tab-list-item">
+        <text>精选MV</text>
+      </view>
+    </view>
+    <view class='tab-plan'>
+      <Mv-list mvList="{{mvList}}"></Mv-list>
+    </view>
+  </view>
+</view>

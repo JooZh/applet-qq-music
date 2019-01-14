@@ -1,0 +1,53 @@
+<view class='layout' wx:if="{{ready}}">
+  <view class='areas-fix'>
+    <view class='areas'>
+      <scroll-view class='areas-list' scroll-x>
+        <view class="area {{item.id==area?'select':''}}" bindtap='areaChange' wx:for="{{tags.area}}" data-id="{{item.id}}" wx:key>
+          <text>{{item.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='areas'>
+      <scroll-view class='areas-list' scroll-x>
+        <view class="area {{item.id==sex?'select':''}}" bindtap='sexChange' wx:for="{{tags.sex}}" data-id="{{item.id}}" wx:key>
+          <text>{{item.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='areas'>
+      <scroll-view class='areas-list' scroll-x>
+        <view class="area {{item.id==genre?'select':''}}" bindtap='genreChange' wx:for="{{tags.genre}}" data-id="{{item.id}}" wx:key>
+          <text>{{item.name}}</text>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <!-- 字母 -->
+  <view class='letters'>
+    <scroll-view class='letters-list' scroll-y>
+      <view class="letter {{item.id==letter?'select':''}}" bindtap='letterChange' wx:for="{{tags.index}}" data-id="{{item.id}}" wx:key="">
+        <text>{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 列表 -->
+  <view class='singers-lists-main'>
+    <scroll-view class='singers-list' scroll-y scroll-top="{{scrollTop}}" bindscrolltolower="lodeMore">
+      <view class='singers' wx:if="{{singerlist.length>0}}">
+        <view class='singer' wx:for="{{singerlist}}" wx:key="item" bindtap='openSinger' data-id="{{item.singer_mid}}" data-name="{{item.singer_name}}">
+          <image class='avatar' src='{{item.singer_avatar}}' mode='widthFix' lazy-load binderror="imgError" data-errorid="{{index}}"/>
+          <view class='info'>
+            <view class='name f-name'>{{item.singer_name}}</view>
+          </view>
+        </view>
+      </view>
+      <view class='no-singer' wx:if="{{singerlist.length == 0 && loaded}}">
+        <view>
+          <view>什么都木有!</view>
+          <view>请切换类目继续浏览</view>
+        </view>
+      </view>
+      <Loading wx:if="{{hasMore}}"></Loading>
+    </scroll-view>
+  </view>
+</view>

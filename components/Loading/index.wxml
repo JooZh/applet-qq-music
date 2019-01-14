@@ -1,0 +1,4 @@
+<view class='loading-box'>
+  <view class="loading"></view>
+  <view class="text">加载中...</view>
+</view>

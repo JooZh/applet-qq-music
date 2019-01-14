@@ -1,0 +1,13 @@
+<!--components/Play-list/Play-list.wxml-->
+<view class='songlist'>
+  <view class="list {{deleteIndex==index?'del':''}} {{playSongindex == index?'active':''}}" wx:for="{{musicList}}" wx:key>
+    <view class='number'>播</view>
+    <view class='detail' bindtap='changeSong' data-index="{{index}}">
+      <view class='songname'>{{item.songname}}</view>
+      <view class='albumname'>{{item.singer}} · {{item.albumname}}</view>      
+    </view>
+    <view class='time'>
+      <view class='c' bindtap='deleteSong' data-index="{{index}}"> - </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<scroll-view class='scroll' scroll-y bindscroll="scrollEvent" bindscrolltolower="lodeMore">
+    <Album-list albumList="{{albumList}}"></Album-list>
+    <Loading wx:if="{{hasMore}}"></Loading>
+</scroll-view>

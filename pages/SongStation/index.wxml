@@ -1,0 +1,1 @@
+<button bindtap='openPlayer'>打开播放器</button>

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Loading": "../Loading/index",
+    "Mv-list": "../MvList/index"
+  }
+}

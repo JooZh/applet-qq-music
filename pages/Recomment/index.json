@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "推荐",
+  "usingComponents": {
+    "Mv-list": "../../components/MvList/index"
+  }
+}

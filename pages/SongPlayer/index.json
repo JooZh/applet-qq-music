@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "音乐播放",
+  "usingComponents": {
+    "Play-list": "../../components/PlayList/index"
+  }
+}

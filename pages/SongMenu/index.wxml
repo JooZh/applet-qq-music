@@ -1,0 +1,32 @@
+<view style='opacity:{{ready}}'>
+  <view id='infos' class='infos'>
+    <view class='areas-fix'>
+      <view class='areas' wx:for="{{targs}}" wx:for-item="taglist" wx:for-index="idx" wx:key>
+        <view class='tit'>{{taglist.categoryGroupName}}:</view>
+        <view class='scroll-box'>
+          <scroll-view class='areas-list' scroll-x>
+            <view class="area {{item.categoryId==categoryId?'select':''}}" bindtap='areaChange' wx:for="{{taglist.items}}" data-id="{{item.categoryId}}" wx:key>
+              <text>{{item.categoryName}}</text>
+            </view>
+          </scroll-view>
+        </view>
+        <view class='void'></view>
+      </view>
+    </view>
+  </view>
+  <view class='tab'>
+    <view class="tab-list {{fixed ? 'fixed':''}}">
+      <view class="tab-list-item left">
+        <text bindtap='changeAll' class="tags {{categoryId==10000000?'select':''}}">全部歌单</text>
+      </view>
+      <view class="tab-list-item right">
+        <text bindtap='changeTop' class="{{sortId==5?'select':''}}" data-sortid="5">推荐</text>
+        <text bindtap='changeTop' class="{{sortId==2?'select':''}}" data-sortid="2">最新</text>
+      </view>
+    </view>
+    <view class='tab-plan'>
+      <Menu-list menuList="{{menuList}}"></Menu-list>
+      <Loading wx:if="{{hasMore}}"></Loading>
+    </view>
+  </view>
+</view>
